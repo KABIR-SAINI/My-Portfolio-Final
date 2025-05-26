@@ -1,0 +1,333 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import '@fontsource-variable/outfit';
+@import '@fontsource/jetbrains-mono/400.css';
+@import '@fontsource/jetbrains-mono/500.css';
+@import '@fontsource/jetbrains-mono/700.css';
+
+:root {
+  --foreground-rgb: 240, 242, 245;
+  --background-start-rgb: 11, 14, 24;
+  --background-end-rgb: 16, 20, 35;
+  --cursor-color: #00A3FF;
+}
+
+@layer base {
+  :root {
+    /* Base shadcn colors - futuristic theme dark mode by default */
+    --background: 222 40% 5%;
+    --foreground: 210 20% 96%;
+    --card: 222 25% 10%;
+    --card-foreground: 210 20% 96%;
+    --popover: 222 25% 10%;
+    --popover-foreground: 210 20% 96%;
+    --primary: 199 100% 50%;
+    --primary-foreground: 210 20% 96%;
+    --secondary: 284 100% 50%;
+    --secondary-foreground: 210 20% 96%;
+    --muted: 222 30% 15%;
+    --muted-foreground: 210 20% 80%;
+    --accent: 161 72% 59%;
+    --accent-foreground: 210 20% 96%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 20% 96%;
+    --border: 222 30% 20%;
+    --input: 222 30% 20%;
+    --ring: 199 100% 50%;
+    --chart-1: 199 100% 50%;
+    --chart-2: 284 100% 50%;
+    --chart-3: 161 72% 59%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+  
+  .light {
+    --background: 210 20% 98%;
+    --foreground: 222 40% 12%;
+    --card: 210 20% 96%;
+    --card-foreground: 222 40% 12%;
+    --popover: 210 20% 96%;
+    --popover-foreground: 222 40% 12%;
+    --primary: 199 100% 45%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 284 85% 45%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 210 20% 90%;
+    --muted-foreground: 222 40% 40%;
+    --accent: 161 72% 42%;
+    --accent-foreground: 210 20% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 222 40% 85%;
+    --input: 222 40% 85%;
+    --ring: 199 100% 45%;
+    --chart-1: 199 100% 45%;
+    --chart-2: 284 85% 45%;
+    --chart-3: 161 72% 42%;
+    --chart-4: 43 74% 55%;
+    --chart-5: 27 87% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply bg-space text-light-text font-sans overflow-x-hidden;
+    background: linear-gradient(to bottom, #0B0E18, #101423);
+    position: relative;
+  }
+  
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(0, 163, 255, 0.03) 0%, rgba(189, 0, 255, 0.03) 30%, transparent 70%);
+    z-index: -1;
+    animation: pulse-bg 15s ease-in-out infinite alternate;
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='rgba(255,255,255,0.03)' fill-rule='evenodd'/%3E%3C/svg%3E");
+    background-size: 100px;
+    opacity: 0.2;
+    z-index: -2;
+    pointer-events: none;
+  }
+}
+
+@layer components {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-electric-blue to-neon-purple;
+  }
+  
+  .glassmorphic {
+    @apply bg-opacity-10 bg-white backdrop-blur-lg shadow-glass border border-white/20 rounded-lg;
+  }
+  
+  .futuristic-card {
+    @apply glassmorphic hover:shadow-neon-blue transition-all duration-300;
+  }
+  
+  .glow-text {
+    text-shadow: 0 0 5px rgba(0, 163, 255, 0.7), 0 0 10px rgba(0, 163, 255, 0.5);
+  }
+  
+  .animated-border {
+    @apply relative before:absolute before:inset-0 before:p-[1px] before:bg-gradient-to-r before:from-electric-blue before:to-neon-purple before:rounded-lg before:content-[''] before:animate-spin-slow;
+  }
+  
+  .grid-bg {
+    @apply bg-grid-pattern bg-grid-50 bg-opacity-30 animate-grid-flow;
+  }
+  
+  .neon-highlight {
+    box-shadow: 0 0 10px theme('colors.electric-blue'), 0 0 30px rgba(0, 163, 255, 0.3);
+  }
+  
+  .cursor-dot {
+    @apply fixed w-3 h-3 rounded-full bg-electric-blue z-50 pointer-events-none;
+    transition: transform 0.15s ease-out;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: screen;
+  }
+  
+  .cursor-outline {
+    @apply fixed w-8 h-8 rounded-full border-2 border-electric-blue z-40 pointer-events-none;
+    transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: exclusion;
+  }
+  
+  .timeline-item {
+    @apply relative pl-8 pb-10 before:absolute before:left-0 before:w-[2px] before:h-full before:bg-gradient-to-b before:from-electric-blue before:to-neon-purple;
+  }
+  
+  .timeline-dot {
+    @apply absolute left-[-7px] w-4 h-4 rounded-full bg-space border-2 border-electric-blue shadow-neon-blue;
+  }
+
+  .skill-tag {
+    @apply px-3 py-1 rounded-full border border-electric-blue/30 text-sm font-medium inline-flex items-center gap-1;
+    background: linear-gradient(90deg, rgba(0, 163, 255, 0.1) 0%, rgba(189, 0, 255, 0.1) 100%);
+    animation: float-slow 6s ease-in-out infinite;
+    transition: all 0.3s ease;
+  }
+  
+  .skill-tag:hover {
+    @apply border-electric-blue/70;
+    transform: translateY(-5px) scale(1.05);
+    animation: glow-pulse 2s infinite;
+    background: linear-gradient(90deg, rgba(0, 163, 255, 0.2) 0%, rgba(189, 0, 255, 0.2) 100%);
+  }
+  
+  .typing-animation {
+    position: relative;
+  }
+  
+  .typing-animation::after {
+    content: '|';
+    position: absolute;
+    right: -8px;
+    color: var(--cursor-color);
+    animation: cursor-beam 1s infinite;
+  }
+  
+  .section-heading {
+    @apply font-outfit font-bold text-2xl md:text-3xl mb-6;
+    background: linear-gradient(90deg, #00A3FF, #BD00FF, #00A3FF);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: text-shimmer 5s linear infinite;
+  }
+  
+  .certificate-card {
+    @apply futuristic-card p-5 relative overflow-hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .certificate-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 15px rgba(0, 163, 255, 0.3), 0 0 30px rgba(0, 163, 255, 0.15);
+  }
+  
+  .certificate-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(transparent, rgba(0, 163, 255, 0.1), transparent 30%);
+    animation: rotate 4s linear infinite;
+  }
+  
+  @keyframes rotate {
+    100% { transform: rotate(1turn); }
+  }
+  
+  @keyframes pulse-bg {
+    0% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.2); }
+    100% { opacity: 0.5; transform: scale(1); }
+  }
+  
+  @keyframes float-slow {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+  
+  @keyframes glow-pulse {
+    0% { box-shadow: 0 0 5px rgba(0, 163, 255, 0.3); }
+    50% { box-shadow: 0 0 15px rgba(0, 163, 255, 0.7), 0 0 30px rgba(0, 163, 255, 0.3); }
+    100% { box-shadow: 0 0 5px rgba(0, 163, 255, 0.3); }
+  }
+  
+  @keyframes text-shimmer {
+    0% { background-position: -100% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  .interactive-btn {
+    @apply relative py-2 px-4 rounded-md font-medium overflow-hidden transition-all duration-300;
+    background: linear-gradient(90deg, rgba(0, 163, 255, 0.2), rgba(189, 0, 255, 0.2));
+  }
+  
+  .interactive-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #00A3FF, #BD00FF);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+  }
+  
+  .interactive-btn:hover::before {
+    opacity: 1;
+  }
+  
+  /* Post animations */
+  .post-card {
+    @apply futuristic-card p-5 transform transition-all duration-500;
+  }
+  
+  .post-card:hover {
+    transform: translateY(-5px) scale(1.02);
+  }
+  
+  /* Responsive improvements */
+  @media (max-width: 768px) {
+    .cursor-dot,
+    .cursor-outline {
+      display: none; /* Hide custom cursor on mobile devices */
+    }
+    
+    section {
+      @apply py-12; /* Reduce vertical padding on mobile */
+    }
+    
+    .container {
+      @apply px-4; /* Ensure consistent padding */
+    }
+    
+    .typing-animation::after {
+      right: -4px; /* Adjust cursor position for smaller screens */
+    }
+    
+    .skill-tag {
+      @apply text-xs py-0.5 px-2; /* Make skill tags smaller on mobile */
+    }
+    
+    .glassmorphic {
+      @apply p-4; /* Reduce padding in glassmorphic containers */
+    }
+    
+    .social-icon-btn {
+      @apply w-7 h-7; /* Smaller social icons on mobile */
+    }
+    
+    .certificate-card,
+    .futuristic-card {
+      @apply transform-none; /* Prevent overflow issues with transforms on mobile */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    body {
+      @apply text-sm; /* Slightly smaller base text on very small screens */
+    }
+    
+    .section-heading {
+      @apply text-xl mb-4; /* Smaller headings on mobile */
+    }
+    
+    .skill-tag {
+      @apply mb-2; /* Add bottom margin to prevent crowding */
+    }
+  }
+}
