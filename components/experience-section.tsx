@@ -36,8 +36,7 @@ export function ExperienceSection() {
           
           <h3 className="text-2xl font-medium mb-4 text-gradient">Coming Soon</h3>
           <p className="text-light-text/70 max-w-lg mx-auto">
-            I'm currently focused on building my skills and knowledge through education and personal projects. 
-            My professional experience journey is just beginning. Stay tuned for updates as I embark on new opportunities!
+           I'm currently focused on building my skills and knowledge through education and personal projects.
           </p>
           
           <div className="mt-6 inline-block">
