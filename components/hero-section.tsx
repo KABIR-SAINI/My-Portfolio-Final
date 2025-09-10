@@ -70,7 +70,7 @@ export function HeroSection() {
           <div className="mb-6 flex justify-center">
             <div className="relative w-32 h-32 md:w-40 md:h-40 overflow-hidden rounded-full border-4 border-electric-blue shadow-neon-blue">
               <img 
-                src="https://assets.macaly-user-data.dev/bj7qnococpvz1dhdnpyzv9ng/l50aszhz45k2mn5ktl5i0lsy/_OinQBDcTkkpWMOBApwBT/whats-app-image-2024-12-23-at-7.28.04-pm.jpeg" 
+                src="/images/profile.jpg" 
                 alt="Kabir Saini" 
                 className="absolute inset-0 w-full h-full object-cover"
               />
