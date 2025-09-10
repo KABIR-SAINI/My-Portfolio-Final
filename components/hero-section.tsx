@@ -69,11 +69,12 @@ export function HeroSection() {
         >
           <div className="mb-6 flex justify-center">
             <div className="relative w-32 h-32 md:w-40 md:h-40 overflow-hidden rounded-full border-4 border-electric-blue shadow-neon-blue">
-              <img 
-                src="/images/profile.jpg" 
-                alt="Kabir Saini" 
-                className="absolute inset-0 w-full h-full object-cover"
-              />
+             <img 
+  src="/images/profile.jpg" 
+  alt="Kabir Saini" 
+  className="absolute inset-0 w-full h-full object-cover"
+/>
+
             </div>
           </div>
           
