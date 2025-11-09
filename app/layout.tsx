@@ -7,7 +7,7 @@ import { Analytics } from "@vercel/analytics/next";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: "Anikait Singh | Personal Portfolio",
+  title: "Kabir Saini | Personal Portfolio",
   description: "Tech Enthusiast | Passionate About IT, AI & Computer Science",
 };
 
