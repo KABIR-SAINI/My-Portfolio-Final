@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { User, MapPin, Mail, Phone } from "lucide-react";
 
-export function AboutSection() {
+exort function AboutSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.3 });
   
